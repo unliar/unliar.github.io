@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>不想和自己说谎的远浅</title>
+  <subtitle>liar liar pants on fire，あなたのことが大好（だいす）きです</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="//unliar.com/"/>
+  <updated>2017-01-03T00:34:32.000Z</updated>
+  <id>//unliar.com/</id>
+  
+  <author>
+    <name>远浅</name>
+    <email>370732889@qq.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Welcome To 2017 !</title>
+    <link href="//unliar.com/2017/01/01/2016ToTheEnd/"/>
+    <id>//unliar.com/2017/01/01/2016ToTheEnd/</id>
+    <published>2016-12-31T16:00:00.000Z</published>
+    <updated>2017-01-03T00:34:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　2016年又到了年尾，又要马不停蹄的奔向未来了。</p>
+<p>　　2016年，总结来说就是 失败。<br>　　<br>　　四月，辞去第一份工作，却没找到自己十分满意的工作，期间还把自己脚给弄伤上了手术台。<br>　　十一月，第二份工作辞职时，也没好利索，眼睛也得了麦粒肿…<br>　　十二月，第三份工作找了一个月也没找到自己喜欢的，想着眼睛快点好，结果哪里都没好。脚伤依旧未愈，眼睛还是肿的不能见人。</p>
+<p>　　没什么值得让我高兴的，伤病一直不断，，自己瞎琢磨学的东西完全在我的工作甚至未来都像是派不上用场。找工作一直也不是很顺利…至于人际关系，呵呵呵，还是那个水平…我已经考虑过自己能否接受最坏的结果了。</p>
+<p>　　尽管这样，还是没有像以前一样那么快陷入负面情绪中无法自拔，我始终相信自己存在在这个世界上的价值不止于他人想象中而已。好想实现自己之前对室友说过的话：找一份能够看到自己改变的工作。我希望看到改变，而不是无聊的重复每一天。我特意去做的大部分事情都会有最坏的打算，而至少在现在，我根本没把过一个将就的生活当做我的最后选择。等我死心吧．．．</p>
+<p>　　</p>
+<blockquote>
+<p>Targets in 2017</p>
+</blockquote>
+<ul>
+<li>我姐姐在今后的婚姻里能够幸福~</li>
+<li>我表哥的病能顺利好转</li>
+<li>父母家人顺利安康</li>
+<li>能顺利找到我喜欢的工作</li>
+<li>世界和平</li>
+<li>Bless You</li>
+</ul>
+<blockquote>
+<p>我的2017会是怎样呢？
+  　　</p>
+</blockquote>
+<p> 　　</p>
+<p>　　</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　2016年又到了年尾，又要马不停蹄的奔向未来了。&lt;/p&gt;
+&lt;p&gt;　　2016年，总结来说就是 失败。&lt;br&gt;　　&lt;br&gt;　　四月，辞去第一份工作，却没找到自己十分满意的工作，期间还把自己脚给弄伤上了手术台。&lt;br&gt;　　十一月，第二份工作辞职时，也没好利索，眼睛也得了麦粒
+    
+    </summary>
+    
+    
+      <category term="BE" scheme="//unliar.com/tags/BE/"/>
+    
+      <category term="For The Future" scheme="//unliar.com/tags/For-The-Future/"/>
+    
+      <category term="2016" scheme="//unliar.com/tags/2016/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue.js+vue-router</title>
+    <link href="//unliar.com/2016/09/05/20161010-VueStart/"/>
+    <id>//unliar.com/2016/09/05/20161010-VueStart/</id>
+    <published>2016-09-05T07:51:41.000Z</published>
+    <updated>2016-12-09T01:29:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　一、安装(npm)</p>
+<p>1、安装相关包<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install npm              <span class="regexp">//</span>更新npm到最新版</div><div class="line">npm install -g cnpm --registry=https:<span class="regexp">//</span>registry.npm.taobao.org                 <span class="regexp">//</span>安装淘宝镜像cnpm</div><div class="line">cnpm install vue             <span class="regexp">//</span>安装vue</div><div class="line">cnpm install webpack         <span class="regexp">//</span>安装webpack</div><div class="line">cnpm install -g vue-cli      <span class="regexp">//</span>全局安装vue-cli</div></pre></td></tr></table></figure></p>
+<p>2、切换到你想放置项目的目录<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vue <span class="keyword">init</span> webpack projectname <span class="comment">//创建项目[projectname]</span></div><div class="line">cnpm install                 <span class="comment">//安装依赖</span></div><div class="line">cnpm install vue-router      <span class="comment">//安装vue-router</span></div></pre></td></tr></table></figure></p>
+<p>3、修改配置<br>在src目录下找到main.js,在new Vue（）前添加如下代码<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span> <span class="comment">//引入vue-router</span></div><div class="line">Vue.use(VueRouter)                 <span class="comment">//安装</span></div></pre></td></tr></table></figure></p>
+<p>4、定义路由<br>在添加的代码下开始定义路由，以下是一个完整的示例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></div><div class="line"><span class="comment">/*引入路由*/</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span></div><div class="line">Vue.use(VueRouter)</div><div class="line"></div><div class="line"><span class="comment">/*定义路由设置*/</span></div><div class="line"><span class="comment">//引入组件</span></div><div class="line"><span class="keyword">import</span> Hello <span class="keyword">from</span> <span class="string">'components/Hello.vue'</span> </div><div class="line"><span class="keyword">import</span> Sx <span class="keyword">from</span> <span class="string">'components/sx.vue'</span></div><div class="line"><span class="keyword">import</span> Sb <span class="keyword">from</span> <span class="string">'components/sb.vue'</span></div><div class="line"><span class="keyword">import</span> Ssr <span class="keyword">from</span> <span class="string">'components/ssr.vue'</span></div><div class="line"><span class="keyword">import</span> Ssx <span class="keyword">from</span> <span class="string">'components/ssx.vue'</span></div><div class="line"><span class="comment">//路由设置</span></div><div class="line"><span class="keyword">const</span> myRouter = <span class="keyword">new</span> VueRouter(&#123;</div><div class="line">		<span class="attr">routes</span>: [&#123;</div><div class="line">			<span class="attr">path</span>: <span class="string">"/"</span>,</div><div class="line"></div><div class="line">			<span class="attr">component</span>: Hello</div><div class="line"></div><div class="line">		&#125;, &#123;</div><div class="line">			<span class="attr">path</span>: <span class="string">"/sx"</span>,</div><div class="line">			<span class="attr">component</span>: Sx</div><div class="line">		&#125;, &#123;</div><div class="line">			<span class="attr">path</span>:<span class="string">'/sb'</span>,</div><div class="line">			<span class="attr">component</span>:Sb</div><div class="line">			</div><div class="line">		&#125;,</div><div class="line">		 &#123;</div><div class="line">			<span class="attr">path</span>:<span class="string">'/ssr'</span>,</div><div class="line">			<span class="attr">component</span>:Ssr</div><div class="line">			</div><div class="line">		&#125;,&#123;</div><div class="line">			<span class="attr">path</span>:<span class="string">'/ssx/:id'</span>,</div><div class="line">			<span class="attr">component</span>:Ssx</div><div class="line">		&#125;</div><div class="line">		]</div><div class="line"></div><div class="line">	&#125;)</div><div class="line"></div><div class="line">	</div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">	<span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">	<span class="attr">template</span>: <span class="string">'&lt;App/&gt;'</span>,</div><div class="line">	<span class="attr">components</span>: &#123;</div><div class="line">		App,</div><div class="line">		Hello,</div><div class="line">		Sx,</div><div class="line">		Sb,</div><div class="line">		Ssr,</div><div class="line">		Ssx</div><div class="line">		</div><div class="line">	&#125;,</div><div class="line">	<span class="attr">router</span>: myRouter        <span class="comment">//挂载路由</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>5、在app.vue下添加相应路由标签<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">'/'</span>  <span class="attr">exact</span> &gt;</span>index<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">'/sx'</span> <span class="attr">exact</span> &gt;</span>sx<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">'/sb'</span>  <span class="attr">exact</span> &gt;</span>sb<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">'/ssr'</span>  <span class="attr">exact</span> &gt;</span>ssr<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">'/ssx/bilibili'</span>  <span class="attr">exact</span> &gt;</span>这是bilibili<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">'/ssx/acfun'</span>  <span class="attr">exact</span> &gt;</span>这是acfun<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>6、启动实时预览或者打包<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cnpm <span class="keyword">run</span><span class="bash"> dev                 //开发环境预览</span></div><div class="line">cnpm <span class="keyword">run</span><span class="bash"> build               //打包到生产环境html css js</span></div></pre></td></tr></table></figure></p>
+<p>7、建议<br>1，建议看过vue官方的教程再查看本示例。<br>2，可以先不通过npm学习相关vue的内容，再逐步转换到npm方式上。<br>3，仔细看官方教程，vue:<a href="https://cn.vuejs.org/" target="_blank" rel="external">https://cn.vuejs.org/</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　一、安装(npm)&lt;/p&gt;
+&lt;p&gt;1、安装相关包&lt;br&gt;&lt;figure class=&quot;highlight awk&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="//unliar.com/tags/JavaScript/"/>
+    
+      <category term="Vue.js" scheme="//unliar.com/tags/Vue-js/"/>
+    
+      <category term="Vue-router" scheme="//unliar.com/tags/Vue-router/"/>
+    
+      <category term="MVVM" scheme="//unliar.com/tags/MVVM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一道bilibili兴趣圈入群JavaScript题</title>
+    <link href="//unliar.com/2016/09/05/9-05-js/"/>
+    <id>//unliar.com/2016/09/05/9-05-js/</id>
+    <published>2016-09-05T07:51:41.000Z</published>
+    <updated>2016-09-05T08:24:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　代码如下：<br> <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="comment">//二、"use strict";</span></div><div class="line">	<span class="keyword">var</span>　 question = <span class="string">"wtf"</span>;</div><div class="line">	<span class="comment">//二、var objB;</span></div><div class="line">	(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">//立即调用模式</span></div><div class="line">		question = <span class="string">"wtf???"</span>; <span class="comment">//改变了全局变量question</span></div><div class="line">		<span class="keyword">var</span> objA = objB = &#123; <span class="comment">//objB 未声明，因此会隐性声明一个全局变量objB,然后赋值给objA;</span></div><div class="line">			question: <span class="string">"wtf"</span>,</div><div class="line">			<span class="attr">then</span>: &#123;</div><div class="line">				<span class="attr">question</span>: <span class="string">"with this question???"</span>,</div><div class="line">				<span class="attr">print</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">					<span class="keyword">var</span> question = <span class="string">"i love js "</span>;</div><div class="line">					<span class="built_in">console</span>.log(<span class="keyword">this</span>.question);<span class="comment">//二、this 严格模式不能指向全局对象，window.question</span></div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line"></div><div class="line">		<span class="keyword">var</span> print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">var</span> question = <span class="string">"i love js me tooo"</span>;</div><div class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span>.question)</div><div class="line">		&#125;;</div><div class="line"></div><div class="line">	&#125;)();</div><div class="line">	<span class="keyword">var</span> then = objB.then.print; <span class="comment">//print中的this指向作用域中的question,objB为全局变量 ，所以输出为wtf???</span></div><div class="line">	then();</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p> <strong>1,写出输出值；</strong><br> 我的答案：<br> 立即调用函数改变了全局变量question为wtf？？？；</p>
+<p>objB 未声明，因此会隐性声明一个全局变量objB,然后赋值给objA;</p>
+<p>objB.then.print中的this指向作用域中的question,objB为全局变量 ，所以输出为wtf??? </p>
+<p> <strong>2，严格模式如何修改；</strong><br> 严格模式中，必须先声明变量，this不能指向全局对象，所以声明全局变量，并且更改this.question为window.question：</p>
+<p> …………………………………………………………………………………………………………………………………..<br><strong>3，个人收获</strong><br>之前一直不懂两个等号的意思，通过这个题目，稍微了解了下，一次是赋值，一次是引用。个人理解~<br> var objA = objB ={}；<br> objB隐性声明为全局变量并且赋值，而objA则是对objB的一次引用；<br> 以及函数作用域的问题，JavaScript高级程序设计的确是一本好书，哈哈哈。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　代码如下：&lt;br&gt; &lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="//unliar.com/tags/JavaScript/"/>
+    
+      <category term="bilibili" scheme="//unliar.com/tags/bilibili/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>屏蔽某度商业推广信息</title>
+    <link href="//unliar.com/2016/07/25/killAD/"/>
+    <id>//unliar.com/2016/07/25/killAD/</id>
+    <published>2016-07-25T12:57:02.000Z</published>
+    <updated>2016-08-06T09:07:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　看见一个某乎论坛里说火狐里可以用脚本屏蔽百度推广的广告位，心生好奇，别人用JavaScript可以做到的事情为什么我不可以？于是今天下班后，随便看了看，发现超级简单。<br>　　首先，去firefox的插件里下载：Greasemonkey插件，重启浏览器，这个插件可以再指定网址挂载js脚本。<br>　　然后我们就开始视奸百度的推广位吧，随便搜索一个带有推广的关键词，比如“整容”，右键查看元素，结果发现，哦豁，id=“3001”到id=“3004”都是推广，嘻嘻这样就简单多了，写完之后发现搜索其他关键词还有推广没有没被屏蔽，老方法，查看你推广信息，发现id=“4001”到id=“4004”都是推广，这样我们就可以开始屏蔽之旅了。<br>　　打开插件界面-用户脚本=新建脚本：先不设置应用到哪个网址，脚本写好之后再填。匹配如下页面：<br> <a href="https://www.baidu.com/*" target="_blank" rel="external">https://www.baidu.com/*</a><br> <a href="http://www.baidu.com/*" target="_blank" rel="external">http://www.baidu.com/*</a><br> <a href="http://baidu.com/*" target="_blank" rel="external">http://baidu.com/*</a><br>   代码如下：定时器 防失效……<br>//看到初次写的那么丑是在忍不住改了一波：version 2.0<br>数组为广告div的ID</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">arrid=[<span class="string">"3001"</span>,<span class="string">"3002"</span>,<span class="string">"3003"</span>,<span class="string">"3004"</span>,<span class="string">"4001"</span>,<span class="string">"4002"</span>,<span class="string">"4003"</span>,<span class="string">"4004"</span>];</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">killAD</span>(<span class="params">arrid</span>)</span>&#123;</div><div class="line">	arrid.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> obj=<span class="string">"AD"</span>+v;</div><div class="line">		obj=<span class="built_in">document</span>.getElementById(v)||<span class="literal">false</span>;</div><div class="line">		<span class="keyword">if</span> (obj!==<span class="literal">false</span>) &#123;</div><div class="line">			obj.setAttribute(<span class="string">"style"</span>,<span class="string">"display: none;visibility: hidden;"</span>)</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"run"</span>)</div><div class="line">	&#125;)</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		killAD(arrid);</div><div class="line">	&#125;,<span class="number">1000</span>)</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>初次写的:version 1.0<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  </div><div class="line">  setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			 <span class="built_in">console</span>.log(<span class="string">"runclose"</span>)</div><div class="line">  <span class="keyword">var</span> AD1 = <span class="built_in">document</span>.getElementById(<span class="string">'3001'</span>) || <span class="literal">false</span>;</div><div class="line">  <span class="keyword">var</span> AD2 = <span class="built_in">document</span>.getElementById(<span class="string">'3002'</span>) || <span class="literal">false</span>;</div><div class="line">  <span class="keyword">var</span> AD3 = <span class="built_in">document</span>.getElementById(<span class="string">'3003'</span>) || <span class="literal">false</span>;</div><div class="line">  <span class="keyword">var</span> AD4 = <span class="built_in">document</span>.getElementById(<span class="string">'3004'</span>) || <span class="literal">false</span>;</div><div class="line">  <span class="keyword">var</span> AD5 = <span class="built_in">document</span>.getElementById(<span class="string">'4001'</span>) || <span class="literal">false</span>;</div><div class="line">  <span class="keyword">var</span> AD6 = <span class="built_in">document</span>.getElementById(<span class="string">'4002'</span>) || <span class="literal">false</span>;</div><div class="line">  <span class="keyword">var</span> AD7 = <span class="built_in">document</span>.getElementById(<span class="string">'4003'</span>) || <span class="literal">false</span>;</div><div class="line">  <span class="keyword">var</span> AD8 = <span class="built_in">document</span>.getElementById(<span class="string">'4004'</span>) || <span class="literal">false</span>;</div><div class="line">  <span class="keyword">if</span> (AD7 !== <span class="literal">false</span>) &#123;</div><div class="line">    AD7.setAttribute(<span class="string">'style'</span>, <span class="string">'display: none;visibility: hidden;'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (AD8 !== <span class="literal">false</span>) &#123;</div><div class="line">    AD8.setAttribute(<span class="string">'style'</span>, <span class="string">'display: none;visibility: hidden;'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (AD6 !== <span class="literal">false</span>) &#123;</div><div class="line">    AD6.setAttribute(<span class="string">'style'</span>, <span class="string">'display: none;visibility: hidden;'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (AD5 !== <span class="literal">false</span>) &#123;</div><div class="line">    AD5.setAttribute(<span class="string">'style'</span>, <span class="string">'display: none;visibility: hidden;'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (AD1 !== <span class="literal">false</span>) &#123;</div><div class="line">    AD1.setAttribute(<span class="string">'style'</span>, <span class="string">'display: none;visibility: hidden;'</span>);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">if</span> (AD2 !== <span class="literal">false</span>) &#123;</div><div class="line">    AD2.setAttribute(<span class="string">'style'</span>, <span class="string">'display: none;visibility: hidden;'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (AD3 !== <span class="literal">false</span>) &#123;</div><div class="line">    AD3.setAttribute(<span class="string">'style'</span>, <span class="string">'display: none;visibility: hidden;'</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (AD4 !== <span class="literal">false</span>) &#123;</div><div class="line">    AD4.setAttribute(<span class="string">'style'</span>, <span class="string">'display: none;visibility: hidden;'</span>);</div><div class="line">  &#125;;</div><div class="line"> &#125;,<span class="number">1000</span>)</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>　　效果大概就是下面的样子，百度：“咦，我的广告咧”！<br>　　<img src="http://7xtby5.com1.z0.glb.clouddn.com/111.png" alt="推广状态被影藏"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　看见一个某乎论坛里说火狐里可以用脚本屏蔽百度推广的广告位，心生好奇，别人用JavaScript可以做到的事情为什么我不可以？于是今天下班后，随便看了看，发现超级简单。&lt;br&gt;　　首先，去firefox的插件里下载：Greasemonkey插件，重启浏览器，这个插件可以再
+    
+    </summary>
+    
+    
+      <category term="javasciprt" scheme="//unliar.com/tags/javasciprt/"/>
+    
+      <category term="code" scheme="//unliar.com/tags/code/"/>
+    
+      <category term="Greasemonkey" scheme="//unliar.com/tags/Greasemonkey/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Notification实例</title>
+    <link href="//unliar.com/2016/07/16/Notification/"/>
+    <id>//unliar.com/2016/07/16/Notification/</id>
+    <published>2016-07-16T12:20:00.000Z</published>
+    <updated>2016-09-05T08:21:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　www.unliar.com;<br>　　HTML5 Notificaton桌面通知，实现的效果就是，在电脑右下角的出现类似于qq邮箱收信提示的效果，不过只支持最新的chrome、firefox，手机端firefox浏览器和UC浏览器可以实现，效果类似于通知栏效果。具体效果如图：<br><img src="http://7xtby5.com1.z0.glb.clouddn.com/myphone.jpg" alt="手机端"><img src="http://7xtby5.com1.z0.glb.clouddn.com/notification.png" alt="电脑端"></p>
+<p> 　　下面是一个简单的实例：<br>   第一步：判断浏览器支持；<br>   第二步：向用户大爷请求通知权限；<br>   第三步：就是创建桌面通知实例；(我在实际的应用中是用来查看某些数据是否更改，满足条件则会创建实例，并且延时关闭，我想应该可以用来做更加有趣的事情，)<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div></pre></td><td class="code"><pre><div class="line">  <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> btnClick = <span class="built_in">document</span>.getElementById(<span class="string">"btnQuery"</span>);</div><div class="line">    </div><div class="line">	<span class="keyword">var</span> httpTarget = <span class="string">"http://7xtby5.com1.z0.glb.clouddn.com/%E6%8A%B1.jpg"</span>; <span class="comment">//图标，可以修改，必须双引号</span></div><div class="line">	startNotification = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"run"</span>);</div><div class="line">		<span class="built_in">console</span>.log(getTasknum(<span class="number">2</span>));</div><div class="line">		<span class="keyword">if</span>(checkAvailue() == <span class="string">"passed"</span>) &#123;</div><div class="line">			<span class="keyword">if</span>(checkSee() == <span class="string">"seed"</span>) &#123;</div><div class="line">				<span class="built_in">document</span>.title = <span class="string">"已在业务页面，通知停止"</span>;</div><div class="line">				</div><div class="line">			&#125;;</div><div class="line">			<span class="keyword">if</span>(checkSee() == <span class="string">"hided"</span>) &#123; <span class="comment">//当用户不在看页面时才模拟点击，检测任务量；</span></div><div class="line">				</div><div class="line">				<span class="built_in">document</span>.title = <span class="string">"任务量"</span>+getText;</div><div class="line">				btnClick.click();</div><div class="line">				setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">					<span class="keyword">if</span>(getTasknum(<span class="number">2</span>)==<span class="string">"danger"</span>) &#123;<span class="comment">//业务警戒值，默认2，可修改</span></div><div class="line">					</div><div class="line">					</div><div class="line">					<span class="built_in">document</span>.title = <span class="string">"任务量为"</span> +getText; </div><div class="line">					createMsg(<span class="string">"Hello  你的任务量已经累积啦"</span>, <span class="keyword">new</span> <span class="built_in">Date</span>().getHours() + <span class="string">"时"</span> + <span class="keyword">new</span> <span class="built_in">Date</span>().getMinutes() + <span class="string">"分"</span> + <span class="string">"任务量☞(๑•ั็ω•็ั๑)☞"</span> + getText, httpTarget);</div><div class="line">				&#125;;</div><div class="line">					</div><div class="line">				&#125;,<span class="number">2000</span>)</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125;;</div><div class="line">	&#125;;</div><div class="line">	timers = setInterval(startNotification, <span class="number">60000</span>) <span class="comment">//延时刷新业务-----1000=1秒，不建议修改为过低值，默认60秒，可以自行修改；</span></div><div class="line">	createButton(<span class="string">"closeButton"</span>, <span class="string">"openButton"</span>);</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//检测浏览器支持+检测用户许可</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkAvailue</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> winNoti = <span class="built_in">window</span>.Notification;</div><div class="line">	<span class="keyword">if</span>(winNoti) &#123;</div><div class="line">		winNoti.requestPermission();</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(winNoti.permission == <span class="string">"granted"</span>) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"passed"</span></div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//获取业务数据</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTasknum</span>(<span class="params">dangerNum</span>) </span>&#123; <span class="comment">//业务量警戒值</span></div><div class="line">	getText = <span class="built_in">document</span>.getElementById(<span class="string">"ywrecordcount"</span>).innerText;</div><div class="line">	<span class="keyword">var</span> getTextNum = getText.replace(<span class="regexp">/[^0-9]/gi</span>, <span class="string">''</span>);</div><div class="line">	<span class="keyword">if</span>(getTextNum &gt;= dangerNum) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"danger"</span> <span class="comment">//返回任务量</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"><span class="comment">//检测用户是否浏览当前页</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkSee</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">if</span>(<span class="built_in">document</span>.hidden) &#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"hided"</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"seed"</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"><span class="comment">//创建实例</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createMsg</span>(<span class="params">title, bodymsg, ico</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> opContent = &#123;</div><div class="line">		<span class="attr">body</span>: bodymsg,</div><div class="line">		<span class="attr">icon</span>: ico</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">		<span class="keyword">var</span> newMsg = <span class="keyword">new</span> Notification(title, opContent) <span class="comment">//延时创建实例---避免因为网速获取任务量失败;</span></div><div class="line">	 </div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//创建按钮</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createButton</span>(<span class="params">idclose, idopen</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">//创建关闭按钮</span></div><div class="line">	<span class="keyword">var</span> tButton = <span class="built_in">document</span>.createElement(<span class="string">"button"</span>);</div><div class="line">	tButton.id = idclose;</div><div class="line">	tButton.style.width = <span class="string">"120px"</span>;</div><div class="line">	tButton.style.height = <span class="string">"50px"</span>;</div><div class="line">	tButton.style.position = <span class="string">"fixed"</span></div><div class="line">	tButton.style.right = <span class="string">"0"</span>;</div><div class="line">	tButton.style.bottom = <span class="string">"50%"</span>;</div><div class="line">	tButton.innerText = <span class="string">"关闭浮窗通知"</span>;</div><div class="line">	tButton.style.opacity = <span class="string">"0.7"</span>;</div><div class="line">	tButton.style.backgroundColor = <span class="string">"whitesmoke"</span>;</div><div class="line">	tButton.style.borderRadius = <span class="string">"10px"</span>;</div><div class="line">	tButton.style.border = <span class="string">"none"</span>;</div><div class="line">	<span class="built_in">document</span>.getElementsByClassName(<span class="string">"page-header-fixed"</span>)[<span class="number">0</span>].appendChild(tButton);</div><div class="line"></div><div class="line">	<span class="comment">//创建开始按钮</span></div><div class="line">	<span class="keyword">var</span> tsButton = <span class="built_in">document</span>.createElement(<span class="string">"button"</span>);</div><div class="line">	tsButton.id = idopen;</div><div class="line">	tsButton.style.width = <span class="string">"120px"</span>;</div><div class="line">	tsButton.style.height = <span class="string">"50px"</span>;</div><div class="line">	tsButton.style.position = <span class="string">"fixed"</span></div><div class="line">	tsButton.style.right = <span class="string">"0"</span>;</div><div class="line">	tsButton.style.bottom = <span class="string">"50%"</span>;</div><div class="line">	tsButton.innerText = <span class="string">"开启浮窗通知"</span>;</div><div class="line">	tsButton.style.opacity = <span class="string">"0.7"</span>;</div><div class="line">	tsButton.style.backgroundColor = <span class="string">"whitesmoke"</span>;</div><div class="line">	tsButton.style.borderRadius = <span class="string">"10px"</span>;</div><div class="line">	tsButton.style.border = <span class="string">"none"</span>;</div><div class="line">	tsButton.style.display = <span class="string">"none"</span>;</div><div class="line">	<span class="built_in">document</span>.getElementsByClassName(<span class="string">"page-header-fixed"</span>)[<span class="number">0</span>].appendChild(tsButton);</div><div class="line"></div><div class="line">	<span class="built_in">document</span>.getElementById(idopen).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"open"</span>);</div><div class="line">		timers = setInterval(startNotification, <span class="number">60000</span>);</div><div class="line">    <span class="built_in">document</span>.title=<span class="string">"通知已开启"</span>;</div><div class="line">		tsButton.style.display = <span class="string">"none"</span>;</div><div class="line">		tButton.style.display = <span class="string">"block"</span>;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="built_in">document</span>.getElementById(idclose).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		clearInterval(timers);</div><div class="line">    <span class="built_in">document</span>.title=<span class="string">"通知已关闭"</span>;</div><div class="line">		<span class="keyword">this</span>.style.display = <span class="string">"none"</span>;</div><div class="line">		tsButton.style.display = <span class="string">"block"</span>;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">"close"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//(c) Copyright 2016-07-17 远浅. All Rights Reserved.</span></div></pre></td></tr></table></figure></p>
+<p>参考链接：<br><a href="https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission" target="_blank" rel="external">ＭＤＮ开发者社区</a><br><a href="http://baidu.com" target="_blank" rel="external">BAIDU搜索</a><br>私人链接：<br> <a href="http://it.unliar.com" target="_blank" rel="external">远浅  因为有趣所以前端</a>　<br> <a href="http://unliar.com/archives/" target="_blank" rel="external">hexo 文章列表</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　www.unliar.com;&lt;br&gt;　　HTML5 Notificaton桌面通知，实现的效果就是，在电脑右下角的出现类似于qq邮箱收信提示的效果，不过只支持最新的chrome、firefox，手机端firefox浏览器和UC浏览器可以实现，效果类似于通知栏效果。具体
+    
+    </summary>
+    
+    
+      <category term="html5" scheme="//unliar.com/tags/html5/"/>
+    
+      <category term="notification" scheme="//unliar.com/tags/notification/"/>
+    
+      <category term="chrome&amp;&amp;firefox" scheme="//unliar.com/tags/chrome-firefox/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大好きですよ～</title>
+    <link href="//unliar.com/2016/05/24/skiiiii/"/>
+    <id>//unliar.com/2016/05/24/skiiiii/</id>
+    <published>2016-05-24T12:40:06.000Z</published>
+    <updated>2016-06-27T00:14:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>开心….<br>さようなら。
+       　　</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开心….&lt;br&gt;さようなら。
+       　　&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="memory" scheme="//unliar.com/tags/memory/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>毕业第一年已经成了过去</title>
+    <link href="//unliar.com/2016/04/28/201604work/"/>
+    <id>//unliar.com/2016/04/28/201604work/</id>
+    <published>2016-04-28T14:26:14.000Z</published>
+    <updated>2016-06-20T00:47:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>　　4月28，距离五一已经没几天了，我出发之前已经做了决定，这两天还没找到自己想要从事的工作的话，就直接闭关两个月，之后再出来找了。做决定很难，可是什么简单呢？在深圳，身无长技，无依无靠，一个人呆着有时候会觉得心里堵的慌，然后陷入鸵鸟的轮回，把自己的视野遮住，不去看，不去想，可是谁都知道接下来会发生什么。</p>
+<p>  　　今天去面试还算顺利，后面的面试直接拒掉了，因为这家是it公司，喜欢那种感觉，活力满满啊~总算是实现了自己当初在微博说想去互联网公司的壮言，可是差了一丢丢，其实我想写代码的。慢慢来…..我不能急…Coding暂时当爱好好了。</p>
+<p>  　　面试过蛮多次了，其实也不多，可能就十次吧。心里现在根本没有一点波澜的感觉了，再不是去年的忐忑的我，等待hr的时候，心里像一湖静水，这就是迷之自信？hr问我，我第一份工作得到了什么，我一愣，我得到什么了….，只是安安全全的在这个大城市里活了下来，陪着人海，举目无亲。 得到了微薄的能让我不是那么让我心慌的一点钱，我悠悠闲闲的找了大半个月工作，仍然可以做出抉择的能力；还有一点自信，自信自己不会在这个城市活不下去，只要我愿意；我还得到了胆敢去预知未来的魄力，假如我按照一定的轨迹这样下去，我的未来是怎么样子，以前大学的时候无忧无虑，现在生活不得不让你去预知未来，是好是坏呢？</p>
+<p>　　几个Hr说，我看起来太安静了，我总是无奈的耸耸肩，笑笑：性格如此，比较温和。早就接受了这样的自己啊，不然，每个人都那么活泼，总得有人衬托。我偶尔也会偷笑，现在我只是看起来温和了呀，第一次来深圳去面试的我是个什么样子了，迷迷糊糊，样子应该看起来也不是很阳光，甚至都不太敢只是别人的眼神。也许用我之前同学的话来说就是“猥琐”吧，哈哈哈哈…那时候我居然生气了，我那迷糊的大学两年半吖。想想真是唏嘘，之前心里还满腹怨恨，为什么会来到这个学校，穷山沟，可是毕业之后的某一天突然想起，我给我身边的人带来了什么，真是很抱歉，没给舍友们一个积极向上的环境，活在自己的世界里，其实自己也给你们造成了负面影响，拖了你们后腿，真的非常非常抱歉，本来可以一起做的更好一点的对吗。</p>
+<p>　　其实有些话应当当面说，发现自己对不起的人实在太多，道歉不过来了….. 也感谢你们一路一起走过，我们还会再见面吗？ </p>
+<p>提笔于：2016-04-28 22:26:14，落笔于23:35</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;　　4月28，距离五一已经没几天了，我出发之前已经做了决定，这两天还没找到自己想要从事的工作的话，就直接闭关两个月，之后再出来找了。做决定很难，可是什么简单呢？在深圳，身无长技，无依无靠，一个人呆着有时候会觉得心里堵的慌，然后陷入鸵鸟的轮回，把自己的视野遮住，不去看，不去想
+    
+    </summary>
+    
+    
+      <category term="job" scheme="//unliar.com/tags/job/"/>
+    
+      <category term="career change" scheme="//unliar.com/tags/career-change/"/>
+    
+      <category term="IT" scheme="//unliar.com/tags/IT/"/>
+    
+      <category term="new" scheme="//unliar.com/tags/new/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高级程序设计笔记本</title>
+    <link href="//unliar.com/2016/04/25/web-developer/"/>
+    <id>//unliar.com/2016/04/25/web-developer/</id>
+    <published>2016-04-25T12:44:39.000Z</published>
+    <updated>2016-06-20T00:37:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>第四章</p>
+</blockquote>
+<ol>
+<li>基本类型值<br>基本类型值是指简单的数据段：undefined、null、Boolean、number、string。<br>不能用.添加属性</li>
+<li><p>引用类型值<br>是指可能由多个值构成的对象。可以添加属性值。</p>
+</li>
+<li><p>传递参数<br>函数的参数都是按值传递，基本类型的值和基本类型的变量复制一样，而引用类型的值如同引用类型的复制一样<br>传递基本类型的值时，传递的值会被复制给一个局部变量，假如重写局部对象，则这个局部变量就是局部对象，而非全局，所以在函数执行完毕会被销毁。</p>
+<pre><code> function setName(obj){
+    obj.name=&quot;远浅&quot;;
+    obj=new Object();
+    obj.name=&quot;远浅是猪&quot;;    
+    alert(obj.name);//远浅是猪
+}
+var person=new Object();
+setName(person);
+alert(person.name)//远浅
+</code></pre></li>
+<li><p>作用域 </p>
+<pre><code>var color=&quot;black&quot;;
+function change(){
+if (color==&quot;black&quot;) {
+       color=&quot;red&quot;
+      } else{
+       color=&quot;blue&quot;//内部未声明，所以全局
+     }
+    }
+ change();
+ alert(color);
+</code></pre></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;第四章&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;基本类型值&lt;br&gt;基本类型值是指简单的数据段：undefined、null、Boolean、number、string。&lt;br&gt;不能用.添加属性&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;引用类型值&lt;br
+    
+    </summary>
+    
+    
+      <category term="web" scheme="//unliar.com/tags/web/"/>
+    
+      <category term="notes" scheme="//unliar.com/tags/notes/"/>
+    
+      <category term="javascript" scheme="//unliar.com/tags/javascript/"/>
+    
+      <category term="books" scheme="//unliar.com/tags/books/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>天不生人上之人，亦不生人下之人</title>
+    <link href="//unliar.com/2016/04/25/tokyo/"/>
+    <id>//unliar.com/2016/04/25/tokyo/</id>
+    <published>2016-04-25T09:43:26.000Z</published>
+    <updated>2016-06-20T00:38:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>福泽谕吉 劝学篇</p>
+</blockquote>
+<p>　　听说有部日剧终于走进中国电影院了，心里总想着什么时候去看看，上周末由于天气等等原因，未能成行<del>其实就是一个人看电影总归是有点怪怪的，虽然出校门以来，一个人看过不少了</del>。今天没面试，所以出去瞧瞧吧~ 不得不说就算只是出去走走也还是比自己一个人呆在房间里要开心的多呀，当然其实更多的是来自电影本身。<br>　　电影本身是很简单的，可是还是不得不佩服日本人讲故事的能力，能把看起来简单的故事讲述的那么精彩，当然假如只是故事精彩，那这碗鸡汤可能不那么值得我们去品尝，沙耶加的妈妈和坪田老师的教育观念则给了我们充足的理由为电影本身买单，影片中和沙耶加的爸爸学校的老师教育理念的冲突也给我们带来了值得深思的地方。在现实世界里，沙耶加爸爸和学校的老师可能是现实的缩影。不断的被否定、不被重视、被嘲笑，你有过这样的经历了吗？日剧的看点就在此，假如没有产生共鸣，类似的影片就没有必要买单了，我不是指谁，我是说上映的大部分国产青春片不值得一张票钱。<br>  　　明知鸡汤电影最后结局会是沙耶加会考上庆应大学，还是觉得很激动，很为沙耶加开心，很为剧中所有人有过的努力开心，所有的冲突都在最后一刻得意释解开来，happy endings~ 可是想想现实，你的思绪被立马拉回来。</p>
+<p>　　现在，你身边还有人会相信你身上的无限可能吗？ </p>
+<p>  　　你曾经有过奋斗然后值得骄傲的那一段回忆吗？</p>
+<p>  　　你以后会相信并且鼓励别人去实现自己的一切可能吗?</p>
+<p><img src="http://7xtby5.com2.z0.glb.clouddn.com/toykyo.jpg" alt="票"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;福泽谕吉 劝学篇&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;　　听说有部日剧终于走进中国电影院了，心里总想着什么时候去看看，上周末由于天气等等原因，未能成行&lt;del&gt;其实就是一个人看电影总归是有点怪怪的，虽然出校门以来，一个人看过不少了&lt;/del&gt;
+    
+    </summary>
+    
+    
+      <category term="japan" scheme="//unliar.com/tags/japan/"/>
+    
+      <category term="film" scheme="//unliar.com/tags/film/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作</title>
+    <link href="//unliar.com/2016/04/24/findejob/"/>
+    <id>//unliar.com/2016/04/24/findejob/</id>
+    <published>2016-04-24T08:45:22.000Z</published>
+    <updated>2016-06-20T00:40:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>不小了</p>
+</blockquote>
+<p>从最开始乐观的想要转行做技术类的工作，突然发现自己确实还存在不足之处。没有项目经验，没有学校里那种不浮躁的环境，满眼都是自己。</p>
+<p>时间越是拖的久，心里越是慌张，突然想起同事的建议，先找工作再辞职，建议确实不错，可是我等不了了，很感谢你们。</p>
+<p>我今年二十三了。</p>
+<p>未来会更好吗？</p>
+<p>深圳天气一直都不好，什么时候还能出去玩呢。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;不小了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;从最开始乐观的想要转行做技术类的工作，突然发现自己确实还存在不足之处。没有项目经验，没有学校里那种不浮躁的环境，满眼都是自己。&lt;/p&gt;
+&lt;p&gt;时间越是拖的久，心里越是慌张，突然想起同事的建议，先找工
+    
+    </summary>
+    
+    
+      <category term="job" scheme="//unliar.com/tags/job/"/>
+    
+      <category term="future" scheme="//unliar.com/tags/future/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自知的智慧</title>
+    <link href="//unliar.com/2016/04/23/afterten5/"/>
+    <id>//unliar.com/2016/04/23/afterten5/</id>
+    <published>2016-04-23T08:56:14.000Z</published>
+    <updated>2016-04-23T08:57:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>给我力量，去接受那些我无法改变的事情；</p>
+<p>给我勇气，去改变那些我可以改变的事情；</p>
+<p>给我智慧去看清两者之间的差别。</p>
+<p>Grant me the strength to accept the things that I cannot change,</p>
+<p>the courage to change the things I can</p>
+<p>and the wisdom to know the difference.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;给我力量，去接受那些我无法改变的事情；&lt;/p&gt;
+&lt;p&gt;给我勇气，去改变那些我可以改变的事情；&lt;/p&gt;
+&lt;p&gt;给我智慧去看清两者之间的差别。&lt;/p&gt;
+&lt;p&gt;Grant me the strength to accept the things that I cannot cha
+    
+    </summary>
+    
+    
+      <category term="power" scheme="//unliar.com/tags/power/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>泉州</title>
+    <link href="//unliar.com/2016/04/23/afterten4/"/>
+    <id>//unliar.com/2016/04/23/afterten4/</id>
+    <published>2016-04-23T08:54:09.000Z</published>
+    <updated>2016-06-20T00:42:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天终结忐忑的买到了回程票，可以安心的出发啦~</p>
+<p>我只是想出去逛逛 呆在深圳太无聊了</p>
+<p>即将失业 即将踏上新的旅程</p>
+<p>海上丝绸之路的起点 泉州~</p>
+<p>最后还是取消了</p>
+<p>毕竟只是不想一个人呆着</p>
+<p>有人一起的话 应该会比一个人开心吧 </p>
+<p>事实的确如此</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天终结忐忑的买到了回程票，可以安心的出发啦~&lt;/p&gt;
+&lt;p&gt;我只是想出去逛逛 呆在深圳太无聊了&lt;/p&gt;
+&lt;p&gt;即将失业 即将踏上新的旅程&lt;/p&gt;
+&lt;p&gt;海上丝绸之路的起点 泉州~&lt;/p&gt;
+&lt;p&gt;最后还是取消了&lt;/p&gt;
+&lt;p&gt;毕竟只是不想一个人呆着&lt;/p&gt;
+&lt;p&gt;有人一起的
+    
+    </summary>
+    
+    
+      <category term="traveling" scheme="//unliar.com/tags/traveling/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>骑士宣言</title>
+    <link href="//unliar.com/2016/04/23/aftertenthree/"/>
+    <id>//unliar.com/2016/04/23/aftertenthree/</id>
+    <published>2016-04-23T08:53:02.000Z</published>
+    <updated>2016-06-20T00:42:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>I will be kind to the weak.</p>
+<p>I will be brave against the strong.</p>
+<p>I will fight all who do wrong.</p>
+<p>I will fight for those who cannot fight</p>
+<p>I will help those who call me for help.</p>
+<p>I will harm no woman.</p>
+<p>I will help my brother knight.</p>
+<p>I will be true to my friends.</p>
+<p>I will be faithful in love.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I will be kind to the weak.&lt;/p&gt;
+&lt;p&gt;I will be brave against the strong.&lt;/p&gt;
+&lt;p&gt;I will fight all who do wrong.&lt;/p&gt;
+&lt;p&gt;I will fight for thos
+    
+    </summary>
+    
+    
+      <category term="english" scheme="//unliar.com/tags/english/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人之常情</title>
+    <link href="//unliar.com/2016/04/23/aftertentwo/"/>
+    <id>//unliar.com/2016/04/23/aftertentwo/</id>
+    <published>2016-04-23T08:51:07.000Z</published>
+    <updated>2016-06-20T00:41:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>熬夜到今天凌晨的五点才看完，7点又被闹钟叫醒，迷迷糊糊的坐车到公司，哦！不！站着到公司。头一次见到起得这么早的孕妇。然后售票员说谢谢，奇怪的世界，并不需要逻辑。我好困啊！</p>
+<p>哭不丢脸啦 反正没人看见 嘻嘻嘻嘻</p>
+<p>情感这东西 不是谁都有的么</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;熬夜到今天凌晨的五点才看完，7点又被闹钟叫醒，迷迷糊糊的坐车到公司，哦！不！站着到公司。头一次见到起得这么早的孕妇。然后售票员说谢谢，奇怪的世界，并不需要逻辑。我好困啊！&lt;/p&gt;
+&lt;p&gt;哭不丢脸啦 反正没人看见 嘻嘻嘻嘻&lt;/p&gt;
+&lt;p&gt;情感这东西 不是谁都有的么&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="feelings" scheme="//unliar.com/tags/feelings/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>致十年后的我</title>
+    <link href="//unliar.com/2016/04/23/afterten/"/>
+    <id>//unliar.com/2016/04/23/afterten/</id>
+    <published>2016-04-23T08:45:49.000Z</published>
+    <updated>2016-06-20T00:36:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>好きな人と歩いた場所も</p>
+<p>曾和喜欢的人走过的地方</p>
+<p>その時見た景色も</p>
+<p>那时候看过的景色</p>
+<p>振り返らず 今を駆け抜け</p>
+<p>统统抛掉，不再回头，全力飞奔</p>
+<p>私は何と出会うの</p>
+<p>我将会遇见些什么呢</p>
+<p>立ち止まるほど</p>
+<p>驻足不前</p>
+<p>意味を問うほど</p>
+<p>探索意义</p>
+<p>きっとまだ大人ではなくて</p>
+<p>一定是我还不够成熟</p>
+<p>今見てるもの</p>
+<p>现在看到的事物</p>
+<p>今出会う人</p>
+<p>现在遇见的人</p>
+<p>その中でただ前だけを見てる</p>
+<p>在这纷杂喧嚣之中，只会看着前方</p>
+<p>10年後の私へ</p>
+<p>致10年后的我</p>
+<p>今は幸せでしょうか</p>
+<p>现在的你，幸福吗</p>
+<p>それとも悲しみで</p>
+<p>还是正沉浸在悲伤中</p>
+<p>泣いているのでしょうか</p>
+<p>默默的流着眼泪</p>
+<p>けどあなたの傍に</p>
+<p>不过在你的身边</p>
+<p>変わらないものがあり</p>
+<p>依然会有不变的存在</p>
+<p>気付いていないだけで</p>
+<p>未能察觉的你</p>
+<p>守られていませんか</p>
+<p>依然被守护着吧</p>
+<p>過ぎし日々に 想いを预け</p>
+<p>把思念寄托于流逝的日子里</p>
+<p>時間だけ ただ追いかけてく</p>
+<p>只有时间在不停的追赶</p>
+<p>背に寄り添った 誰かの夢に</p>
+<p>托付在我背上的，是谁的梦想</p>
+<p>振り向ける日がいつか来るのかな</p>
+<p>总有一天必须要面对的吧</p>
+<p>10年後の私へ</p>
+<p>致10年后的我</p>
+<p>今は誰を好きですか</p>
+<p>现在的你，喜欢着谁呢</p>
+<p>それとも変わらずに</p>
+<p>还是和以前一样</p>
+<p>あの人が好きですか</p>
+<p>继续喜欢着那个人呢</p>
+<p>けどいつか</p>
+<p>不过，现在的你</p>
+<p>知らない誰かを爱する前に</p>
+<p>在爱上某个人之前</p>
+<p>自分のことを好きと</p>
+<p>喜欢自己这句话</p>
+<p>言えるようになれましたか</p>
+<p>能否先说出来呢</p>
+<p>大切な人たちは</p>
+<p>所珍爱的朋友们</p>
+<p>今も変わらずいますか</p>
+<p>依然在重复平凡的生活吗</p>
+<p>それとも遠く離れ</p>
+<p>还是已经远离了</p>
+<p>それぞれ歩んでいますか</p>
+<p>踏上了各自的旅途</p>
+<p>けど そんな出会いを</p>
+<p>但是，在重复着无数次的相遇</p>
+<p>别れを 缲り返して</p>
+<p>和离别之后</p>
+<p>今の私よりも</p>
+<p>是否比现在的我</p>
+<p>すてきになっていますか</p>
+<p>更有魅力呢</p>
+<p>10年後の私へ</p>
+<p>致10年后的我</p>
+<p>今がもし幸せなら</p>
+<p>如果现在的你是幸福的</p>
+<p>あの日の私のこと</p>
+<p>过往日子的我</p>
+<p>思い出してくれますか</p>
+<p>能否请你想起来呢</p>
+<p>そこにはつらいことに</p>
+<p>回忆中的我</p>
+<p>泣いた私がいるけど</p>
+<p>一定在伤心的哭泣吧</p>
+<p>その涙を優しく</p>
+<p>请将这温柔的泪水</p>
+<p>思い出に変えてください</p>
+<p>融入记忆的海洋</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;好きな人と歩いた場所も&lt;/p&gt;
+&lt;p&gt;曾和喜欢的人走过的地方&lt;/p&gt;
+&lt;p&gt;その時見た景色も&lt;/p&gt;
+&lt;p&gt;那时候看过的景色&lt;/p&gt;
+&lt;p&gt;振り返らず 今を駆け抜け&lt;/p&gt;
+&lt;p&gt;统统抛掉，不再回头，全力飞奔&lt;/p&gt;
+&lt;p&gt;私は何と出会うの&lt;/p&gt;
+&lt;p&gt;我将会遇见些什么呢
+    
+    </summary>
+    
+    
+      <category term="for me afer ten years" scheme="//unliar.com/tags/for-me-afer-ten-years/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我们都是过客</title>
+    <link href="//unliar.com/2016/04/23/ipast/"/>
+    <id>//unliar.com/2016/04/23/ipast/</id>
+    <published>2016-04-23T08:37:19.000Z</published>
+    <updated>2016-06-20T00:37:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>好几天没有刷朋友圈，刚看到，发现大家都在渐行渐远。感到有点失落。林琳说女生之间的友谊很奇怪，就是这样会慢慢淡去。我有点恐慌。我的世界里有的是新的朋友，你的世界也是一样。交集变少，交谈变少，会成为最熟悉的陌生人么？我在努力结交新的朋友，很费力也很为难，成年人的世界并没有时间来认识，了解与深交；看着你在不断的认识新的朋友，有点空。—谭湘娟</p>
+</blockquote>
+<p>我一个人在这个城市里游走的某一刻突然愣了下，我过去所认识的人和我现在在路上擦肩而过的人又有什么区别呢？我心思游离了一路，最后无奈的得出的结论是： 没有本质上的区别。</p>
+<p>我并不知道你们的社交圈是什么样子，我只知道我自己，毕业季就意味着有一大批人从此消失在我的世界里。假如有一天我在看见墓碑上刻着我曾熟知的名字，脑海里回忆起的是最后一次见你的样子。很可惜，并不是所有人我都能想起来，甚至于根本就没多大印象了，有印象的大都是我经常想起或者最近见过的人。曾经的同学，有过不短接触的人从转身的那一刻起再无交集，有的也许会强行出现在你的社交圈里，沉寂的大多数，和陌生人又有什么区别呢？</p>
+<p>我们陪彼此走过一段比路人比肩而过更漫长的旅程，可是我们之间仅仅如此而已了，量变并没有引发任何质变。假如有人提起你和我，大概就是：你们做过三年的同学呢！除此之外……</p>
+<p>社交圈大部分人都在自说自话，只得苦笑，也许只有这样强行出镜才能让我想起你，有时候甚至都不用强行，只用屏蔽你就能把你抹去，还真是一场非常不正式的道别。</p>
+<p>好没有逻辑的文字，我应该努力证明：那些从不联系的人和路人之间并没有本质的区别这个论点。但是最后 我只想说谢谢你们陪我路过，不说了。</p>
+<p>想见又想见你，还真是很……怎么说呢。</p>
+<p>人贵有自知</p>
+<p>被拒绝很伤呢，毕竟自尊心低。</p>
+<p>人一旦主动，就把权力移交到对方手里。</p>
+<p>生或者死。</p>
+<p>你猜呢~</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;好几天没有刷朋友圈，刚看到，发现大家都在渐行渐远。感到有点失落。林琳说女生之间的友谊很奇怪，就是这样会慢慢淡去。我有点恐慌。我的世界里有的是新的朋友，你的世界也是一样。交集变少，交谈变少，会成为最熟悉的陌生人么？我在努力结交新的朋友，很费力也很为难
+    
+    </summary>
+    
+    
+      <category term="past" scheme="//unliar.com/tags/past/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Night watcher swear</title>
+    <link href="//unliar.com/2016/04/23/tenyear/"/>
+    <id>//unliar.com/2016/04/23/tenyear/</id>
+    <published>2016-04-23T08:22:06.000Z</published>
+    <updated>2016-06-20T00:37:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>“Night gathers, and now my watch begins.</p>
+<p>It shall not end until my death.</p>
+<p>I shall take no wife, hold no lands, father no children.</p>
+<p>I shall wear no crowns and win no glory.</p>
+<p>I shall live and die at my post.</p>
+<p>I am the sword in the darkness.</p>
+<p>I am the watcher on the walls.</p>
+<p>I am the fire that burns against the cold,</p>
+<p>the light that brings the dawn,</p>
+<p>the horn that wakes the sleepers,</p>
+<p>the shield that guards the realms of men.</p>
+<p>I pledge my life and honor to the Night’s Watch,</p>
+<p>for this night and all the nights to come.”</p>
+<p>……………………………………………………………………………</p>
+<p>守夜人誓言</p>
+<p>　长夜将至，我从今开始守望，至死方休。</p>
+<p>我将不娶妻、不封地、不生子。</p>
+<p>我将不戴宝冠，不争荣宠。</p>
+<p>我将尽忠职守，生死於斯。</p>
+<p>我是黑暗中的利剑，</p>
+<p>长城上的守卫。</p>
+<p>我是抵御寒冷的烈焰，</p>
+<p>破晓时分的光线，</p>
+<p>唤醒眠者的号角，</p>
+<p>守护王国的坚盾。</p>
+<p>我将生命与荣耀献给守夜人，</p>
+<p>今夜如此，夜夜皆然。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;“Night gathers, and now my watch begins.&lt;/p&gt;
+&lt;p&gt;It shall not end until my death.&lt;/p&gt;
+&lt;p&gt;I shall take no wife, hold no lands, father no ch
+    
+    </summary>
+    
+    
+      <category term="english" scheme="//unliar.com/tags/english/"/>
+    
+  </entry>
+  
+</feed>
