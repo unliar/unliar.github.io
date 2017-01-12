@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>//unliar.com/2017/01/12/how-to-install-mongodb/</loc>
+    <lastmod>2017-01-12T12:01:06.373Z</lastmod>
+    <data>
+        <display>
+        <title>怎样以正确的姿势安装mongodb,并且用Node搭建登录页</title>
+        <pubTime>2017-01-12T10:54:18.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>Node</tag>
+         
+        <tag>mongodb</tag>
+         
+        <tag>mongoose</tag>
+         
+        <tag>express</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>//unliar.com/2017/01/01/2016ToTheEnd/</loc>
     <lastmod>2017-01-03T00:34:32.000Z</lastmod>
     <data>

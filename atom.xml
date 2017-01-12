@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>不想和自己说谎的远浅</title>
+  <title>抚手把云探</title>
   <subtitle>liar liar pants on fire，あなたのことが大好（だいす）きです</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="//unliar.com/"/>
-  <updated>2017-01-03T00:34:32.000Z</updated>
+  <updated>2017-01-12T12:01:06.373Z</updated>
   <id>//unliar.com/</id>
   
   <author>
@@ -14,6 +14,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>怎样以正确的姿势安装mongodb,并且用Node搭建登录页</title>
+    <link href="//unliar.com/2017/01/12/how-to-install-mongodb/"/>
+    <id>//unliar.com/2017/01/12/how-to-install-mongodb/</id>
+    <published>2017-01-12T10:54:18.000Z</published>
+    <updated>2017-01-12T12:01:06.373Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>这篇文章主要是来讲如何用mongodb+node+express+mongoose来搭建一个简单的登录页。</p>
+<p>1.安装mongodb,非关系型数据库。<br>以windows为例,去<a href="https://www.mongodb.com" target="_blank" rel="external">官网</a>下载安装包,选择你要的版本，然后像安装软件一样下一步，下一步，安装完成之后去安装目录的bin目录下双击mongod.exe或者控制台输入mongod,不出意外,肯定会出错,怎么办呢？解决方法就是在你安装盘比如D盘下新建 data/db/ 的目录，然后命令行中输入mongo,如果没有被出错并且输出了版本,就说明安装成功了,数据库默认地址是127.0.0.1:3000。当然也可以用 mongod –dbpath=d:/1111111/database/data 命令指定特定的路径,你可以自行修改，或者参考官网说明,这里不展开。</p>
+<p>2.可视化工具.<br>为了只管展示数据,而不是看黑框框命令行界面，可以选择下载<a href="https://robomongo.org/download" target="_blank" rel="external">Robomongo</a> 可视化mongodb数据库工具</p>
+<p>3.安装<br>express+静态生成器+mongoose，express用法可在<a href="http://www.expressjs.com.cn/" target="_blank" rel="external">exress</a>中查看,</p>
+<ul>
+<li>npm install express-generator -g</li>
+<li>npm install express -g</li>
+<li>npm install mongoose -g</li>
+</ul>
+<p>4.建立项目目录,安装依赖</p>
+</blockquote>
+<ul>
+<li>express website</li>
+<li>cd website</li>
+<li>npm install<blockquote>
+<p>5.修改配置 ,下面是我的实例<br>一 、app.js 根配置文件</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="keyword">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="keyword">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> favicon = <span class="keyword">require</span>(<span class="string">'serve-favicon'</span>);</div><div class="line"><span class="keyword">var</span> logger = <span class="keyword">require</span>(<span class="string">'morgan'</span>);</div><div class="line"><span class="keyword">var</span> cookieParser = <span class="keyword">require</span>(<span class="string">'cookie-parser'</span>);</div><div class="line"><span class="keyword">var</span> bodyParser = <span class="keyword">require</span>(<span class="string">'body-parser'</span>);</div><div class="line"><span class="keyword">var</span> index = <span class="keyword">require</span>(<span class="string">'./routes/index'</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line"></div><div class="line"></div><div class="line">app.set(<span class="string">'views'</span>, path.join(__dirname, <span class="string">'views'</span>));</div><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'jade'</span>);</div><div class="line"></div><div class="line">app.all(<span class="function"><span class="keyword">function</span><span class="params">(req, res, next)</span> </span>&#123;</div><div class="line">        res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);</div><div class="line">        next();</div><div class="line">    &#125;)</div><div class="line">    </div><div class="line">app.<span class="keyword">use</span>(logger(<span class="string">'dev'</span>));</div><div class="line">app.<span class="keyword">use</span>(bodyParser.json());</div><div class="line">app.<span class="keyword">use</span>(bodyParser.urlencoded(&#123; extended: <span class="keyword">false</span> &#125;));</div><div class="line">app.<span class="keyword">use</span>(cookieParser());</div><div class="line">app.<span class="keyword">use</span>(express.<span class="keyword">static</span>(path.join(__dirname, <span class="string">'public'</span>)));</div><div class="line"></div><div class="line"><span class="comment">//路由配置在 './routes/index'</span></div><div class="line">app.<span class="keyword">use</span>(<span class="string">'/'</span>, index);</div><div class="line"><span class="comment">//设置静态资源目录www用来存放前端html页面</span></div><div class="line">app.<span class="keyword">use</span>(express.<span class="keyword">static</span>(<span class="string">'www'</span>));</div><div class="line"></div><div class="line">app.<span class="keyword">use</span>(<span class="function"><span class="keyword">function</span><span class="params">(req, res, next)</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> err = <span class="keyword">new</span> Error(<span class="string">'Not Found'</span>);</div><div class="line">    err.status = <span class="number">404</span>;</div><div class="line">    next(err);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"></div><div class="line">app.<span class="keyword">use</span>(<span class="function"><span class="keyword">function</span><span class="params">(err, req, res, next)</span> </span>&#123;</div><div class="line">    </div><div class="line">    res.locals.message = err.message;</div><div class="line">    res.locals.error = req.app.get(<span class="string">'env'</span>) === <span class="string">'development'</span> ? err : &#123;&#125;;</div><div class="line"></div><div class="line">    </div><div class="line">    res.status(err.status || <span class="number">500</span>);</div><div class="line">    res.render(<span class="string">'error'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports = app;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>二 、’./routes/index’ 路由规则</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> router = express.Router();</div><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</div><div class="line"><span class="keyword">var</span> database = <span class="built_in">require</span>(<span class="string">'../model/database.js'</span>)</div><div class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</div><div class="line"></div><div class="line"><span class="comment">//数据库连接</span></div><div class="line">mongoose.connect(<span class="string">'mongodb://127.0.0.1:27017/web'</span>)</div><div class="line"><span class="keyword">var</span> db = mongoose.connection;</div><div class="line"></div><div class="line"><span class="comment">//数据库连接信息</span></div><div class="line">db.on(<span class="string">'error'</span>, <span class="built_in">console</span>.error.bind(<span class="built_in">console</span>, <span class="string">'connection error'</span>));</div><div class="line">db.once(<span class="string">'open'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'mongoose is connecting with your mongodb'</span>)</div><div class="line">    &#125;)</div><div class="line"><span class="comment">//首页路由重定向到静态资源目录</span></div><div class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">    res.redirect(<span class="string">'/index.html'</span>)</div><div class="line">&#125;);</div><div class="line"><span class="comment">//处理post请求,</span></div><div class="line">router.post(<span class="string">'/login'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"用户名:"</span> +</div><div class="line">        req.body.name)</div><div class="line"><span class="comment">//req.body 因为post请求的data在body里，如果是get用req.params        </span></div><div class="line">    <span class="keyword">var</span> name = req.body.name;</div><div class="line">    <span class="keyword">var</span> pass = req.body.pass;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//数据库查询方法查询是否匹配到用户名和密码</span></div><div class="line"><span class="comment">//res.json()可以返回一个json对象</span></div><div class="line">    database.findOne(&#123; <span class="string">"name"</span>: name &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">error, results</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (error) &#123;</div><div class="line">            <span class="built_in">console</span>(<span class="string">'查询出错'</span>)</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!results) &#123;</div><div class="line">            res.json(&#123;</div><div class="line">                <span class="string">'err'</span>: <span class="string">"wrongname"</span>,</div><div class="line">                <span class="string">'status'</span>: <span class="string">"err"</span>,</div><div class="line">                <span class="string">'body'</span>: req.body</div><div class="line">            &#125;)</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (pass != results.pass) &#123;</div><div class="line">            res.json(&#123;</div><div class="line">                <span class="string">'err'</span>: <span class="string">"wrongpass"</span>,</div><div class="line">                <span class="string">'status'</span>: <span class="string">"err"</span>,</div><div class="line">                <span class="string">'body'</span>: req.body</div><div class="line">            &#125;)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"登录成功"</span>)</div><div class="line">            res.json(&#123;</div><div class="line">                <span class="string">'status'</span>: <span class="string">"ok"</span>,</div><div class="line">                <span class="string">'err'</span>: <span class="string">'no'</span>,</div><div class="line">                <span class="string">'body'</span>: req.body</div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = router;</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line">三 、''../model/database.js''数据库模型</div></pre></td></tr></table></figure>
+<p>var mongoose = require(‘mongoose’);<br>var Schema = mongoose.Schema;</p>
+<p>var mylogin = new Schema({<br>    name: { type: String, unique: true },<br>    pass: { type: Number, default: 789654 }<br>})</p>
+<p>var login = mongoose.model(‘hello’, mylogin)<br>module.exports = login<br>```  </p>
+<blockquote>
+<p>然后就是前端的HTML发送请求了<br> 应该都会写的对不对<del>~</del></p>
+</blockquote>
+<p>这样我们就完成了一个简单的 前端登录+后台返回请求的实例,还是不太难的。多熟悉express+mongoose+Node学习起来不难。</p>
+<p>参考资料：<br><a href="https://www.mongodb.com" target="_blank" rel="external">mongodb</a><br><a href="https://robomongo.org/" target="_blank" rel="external">express</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这篇文章主要是来讲如何用mongodb+node+express+mongoose来搭建一个简单的登录页。&lt;/p&gt;
+&lt;p&gt;1.安装mongodb,非关系型数据库。&lt;br&gt;以windows为例,去&lt;a href=&quot;https://www.mongod
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="//unliar.com/tags/JavaScript/"/>
+    
+      <category term="Node" scheme="//unliar.com/tags/Node/"/>
+    
+      <category term="mongodb" scheme="//unliar.com/tags/mongodb/"/>
+    
+      <category term="mongoose" scheme="//unliar.com/tags/mongoose/"/>
+    
+      <category term="express" scheme="//unliar.com/tags/express/"/>
+    
+  </entry>
   
   <entry>
     <title>Welcome To 2017 !</title>

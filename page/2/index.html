@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//unliar.com">
-  <title>不想和自己说谎的远浅</title>
+  <title>抚手把云探</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="远浅的个人博客,跌跌撞撞的码农。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="不想和自己说谎的远浅">
+<meta property="og:title" content="抚手把云探">
 <meta property="og:url" content="//unliar.com/page/2/index.html">
-<meta property="og:site_name" content="不想和自己说谎的远浅">
+<meta property="og:site_name" content="抚手把云探">
 <meta property="og:description" content="远浅的个人博客,跌跌撞撞的码农。">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不想和自己说谎的远浅">
+<meta name="twitter:title" content="抚手把云探">
 <meta name="twitter:description" content="远浅的个人博客,跌跌撞撞的码农。">
   
-    <link rel="alternative" href="/atom.xml" title="不想和自己说谎的远浅" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="抚手把云探" type="application/atom+xml">
   
   
     <link rel="icon" href="http://7xtby5.com2.z0.glb.clouddn.com/2s.ico">
@@ -177,6 +177,108 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-web-developer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/25/web-developer/">高级程序设计笔记本</a>
+    </h1>
+  
+
+        <a href="/2016/04/25/web-developer/" class="archive-article-date">
+  	<time datetime="2016-04-25T12:44:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-25</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>第四章</p>
+</blockquote>
+<ol>
+<li>基本类型值<br>基本类型值是指简单的数据段：undefined、null、Boolean、number、string。<br>不能用.添加属性</li>
+<li><p>引用类型值<br>是指可能由多个值构成的对象。可以添加属性值。</p>
+</li>
+<li><p>传递参数<br>函数的参数都是按值传递，基本类型的值和基本类型的变量复制一样，而引用类型的值如同引用类型的复制一样<br>传递基本类型的值时，传递的值会被复制给一个局部变量，假如重写局部对象，则这个局部变量就是局部对象，而非全局，所以在函数执行完毕会被销毁。</p>
+<pre><code> function setName(obj){
+    obj.name=&quot;远浅&quot;;
+    obj=new Object();
+    obj.name=&quot;远浅是猪&quot;;    
+    alert(obj.name);//远浅是猪
+}
+var person=new Object();
+setName(person);
+alert(person.name)//远浅
+</code></pre></li>
+<li><p>作用域 </p>
+<pre><code>var color=&quot;black&quot;;
+function change(){
+if (color==&quot;black&quot;) {
+       color=&quot;red&quot;
+      } else{
+       color=&quot;blue&quot;//内部未声明，所以全局
+     }
+    }
+ change();
+ alert(color);
+</code></pre></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">web</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">notes</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">javascript</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">books</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/04/25/web-developer/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-tokyo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -733,79 +835,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ipast" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/23/ipast/">我们都是过客</a>
-    </h1>
-  
-
-        <a href="/2016/04/23/ipast/" class="archive-article-date">
-  	<time datetime="2016-04-23T08:37:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-23</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>好几天没有刷朋友圈，刚看到，发现大家都在渐行渐远。感到有点失落。林琳说女生之间的友谊很奇怪，就是这样会慢慢淡去。我有点恐慌。我的世界里有的是新的朋友，你的世界也是一样。交集变少，交谈变少，会成为最熟悉的陌生人么？我在努力结交新的朋友，很费力也很为难，成年人的世界并没有时间来认识，了解与深交；看着你在不断的认识新的朋友，有点空。—谭湘娟</p>
-</blockquote>
-<p>我一个人在这个城市里游走的某一刻突然愣了下，我过去所认识的人和我现在在路上擦肩而过的人又有什么区别呢？我心思游离了一路，最后无奈的得出的结论是： 没有本质上的区别。</p>
-<p>我并不知道你们的社交圈是什么样子，我只知道我自己，毕业季就意味着有一大批人从此消失在我的世界里。假如有一天我在看见墓碑上刻着我曾熟知的名字，脑海里回忆起的是最后一次见你的样子。很可惜，并不是所有人我都能想起来，甚至于根本就没多大印象了，有印象的大都是我经常想起或者最近见过的人。曾经的同学，有过不短接触的人从转身的那一刻起再无交集，有的也许会强行出现在你的社交圈里，沉寂的大多数，和陌生人又有什么区别呢？</p>
-<p>我们陪彼此走过一段比路人比肩而过更漫长的旅程，可是我们之间仅仅如此而已了，量变并没有引发任何质变。假如有人提起你和我，大概就是：你们做过三年的同学呢！除此之外……</p>
-<p>社交圈大部分人都在自说自话，只得苦笑，也许只有这样强行出镜才能让我想起你，有时候甚至都不用强行，只用屏蔽你就能把你抹去，还真是一场非常不正式的道别。</p>
-<p>好没有逻辑的文字，我应该努力证明：那些从不联系的人和路人之间并没有本质的区别这个论点。但是最后 我只想说谢谢你们陪我路过，不说了。</p>
-<p>想见又想见你，还真是很……怎么说呢。</p>
-<p>人贵有自知</p>
-<p>被拒绝很伤呢，毕竟自尊心低。</p>
-<p>人一旦主动，就把权力移交到对方手里。</p>
-<p>生或者死。</p>
-<p>你猜呢~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">past</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/04/23/ipast/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -914,7 +943,27 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">job</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">career change</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">IT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">new</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">bilibili</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -930,6 +979,42 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">traveling</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">english</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">power</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">feelings</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">mongodb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">mongoose</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">express</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">future</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">BE</a>
               </li>
              
@@ -942,35 +1027,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">bilibili</a>
+                <a href="javascript:void(0)" class="color1">html5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">traveling</a>
+                <a href="javascript:void(0)" class="color3">notification</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">power</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">english</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">feelings</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">job</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">future</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">past</a>
+                <a href="javascript:void(0)" class="color1">chrome&&firefox</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -978,11 +1043,23 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">japan</a>
+                <a href="javascript:void(0)" class="color5">past</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">film</a>
+                <a href="javascript:void(0)" class="color2">for me afer ten years</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javasciprt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">code</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Greasemonkey</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1002,43 +1079,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">html5</a>
+                <a href="javascript:void(0)" class="color1">japan</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">notification</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">chrome&&firefox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javasciprt</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">code</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Greasemonkey</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">for me afer ten years</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">career change</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">IT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">new</a>
+                <a href="javascript:void(0)" class="color5">film</a>
               </li>
             
             <div class="clearfix"></div>
