@@ -5,7 +5,7 @@
     
   <url>
     <loc>//unliar.com/2017/01/12/how-to-install-mongodb/</loc>
-    <lastmod>2017-01-12T12:01:06.373Z</lastmod>
+    <lastmod>2017-01-12T12:13:44.648Z</lastmod>
     <data>
         <display>
         <title>怎样以正确的姿势安装mongodb,并且用Node搭建登录页</title>
