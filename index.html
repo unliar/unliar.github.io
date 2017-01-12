@@ -218,7 +218,7 @@ var _hmt = _hmt || [];
 </li>
 </ul>
 <p>二 、’./routes/index’ 路由规则</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> router = express.Router();</div><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</div><div class="line"><span class="keyword">var</span> database = <span class="built_in">require</span>(<span class="string">'../model/database.js'</span>)</div><div class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</div><div class="line"></div><div class="line"><span class="comment">//数据库连接</span></div><div class="line">mongoose.connect(<span class="string">'mongodb://127.0.0.1:27017/web'</span>)</div><div class="line"><span class="keyword">var</span> db = mongoose.connection;</div><div class="line"></div><div class="line"><span class="comment">//数据库连接信息</span></div><div class="line">db.on(<span class="string">'error'</span>, <span class="built_in">console</span>.error.bind(<span class="built_in">console</span>, <span class="string">'connection error'</span>));</div><div class="line">db.once(<span class="string">'open'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'mongoose is connecting with your mongodb'</span>)</div><div class="line">    &#125;)</div><div class="line"><span class="comment">//首页路由重定向到静态资源目录</span></div><div class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">    res.redirect(<span class="string">'/index.html'</span>)</div><div class="line">&#125;);</div><div class="line"><span class="comment">//处理post请求,</span></div><div class="line">router.post(<span class="string">'/login'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"用户名:"</span> +</div><div class="line">        req.body.name)</div><div class="line"><span class="comment">//req.body 因为post请求的data在body里，如果是get用req.params        </span></div><div class="line">    <span class="keyword">var</span> name = req.body.name;</div><div class="line">    <span class="keyword">var</span> pass = req.body.pass;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//数据库查询方法查询是否匹配到用户名和密码</span></div><div class="line"><span class="comment">//res.json()可以返回一个json对象</span></div><div class="line">    database.findOne(&#123; <span class="string">"name"</span>: name &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">error, results</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (error) &#123;</div><div class="line">            <span class="built_in">console</span>(<span class="string">'查询出错'</span>)</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!results) &#123;</div><div class="line">            res.json(&#123;</div><div class="line">                <span class="string">'err'</span>: <span class="string">"wrongname"</span>,</div><div class="line">                <span class="string">'status'</span>: <span class="string">"err"</span>,</div><div class="line">                <span class="string">'body'</span>: req.body</div><div class="line">            &#125;)</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (pass != results.pass) &#123;</div><div class="line">            res.json(&#123;</div><div class="line">                <span class="string">'err'</span>: <span class="string">"wrongpass"</span>,</div><div class="line">                <span class="string">'status'</span>: <span class="string">"err"</span>,</div><div class="line">                <span class="string">'body'</span>: req.body</div><div class="line">            &#125;)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"登录成功"</span>)</div><div class="line">            res.json(&#123;</div><div class="line">                <span class="string">'status'</span>: <span class="string">"ok"</span>,</div><div class="line">                <span class="string">'err'</span>: <span class="string">'no'</span>,</div><div class="line">                <span class="string">'body'</span>: req.body</div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = router;</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line"></div><div class="line">三 、''../model/database.js''数据库模型</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> router = express.Router();</div><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);</div><div class="line"><span class="keyword">var</span> database = <span class="built_in">require</span>(<span class="string">'../model/database.js'</span>)</div><div class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</div><div class="line"></div><div class="line"><span class="comment">//数据库连接</span></div><div class="line">mongoose.connect(<span class="string">'mongodb://127.0.0.1:27017/web'</span>)</div><div class="line"><span class="keyword">var</span> db = mongoose.connection;</div><div class="line"></div><div class="line"><span class="comment">//数据库连接信息</span></div><div class="line">db.on(<span class="string">'error'</span>, <span class="built_in">console</span>.error.bind(<span class="built_in">console</span>, <span class="string">'connection error'</span>));</div><div class="line">db.once(<span class="string">'open'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'mongoose is connecting with your mongodb'</span>)</div><div class="line">    &#125;)</div><div class="line"><span class="comment">//首页路由重定向到静态资源目录</span></div><div class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">    res.redirect(<span class="string">'/index.html'</span>)</div><div class="line">&#125;);</div><div class="line"><span class="comment">//处理post请求,</span></div><div class="line">router.post(<span class="string">'/login'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"用户名:"</span> +</div><div class="line">        req.body.name)</div><div class="line"><span class="comment">//req.body 因为post请求的data在body里，如果是get用req.params        </span></div><div class="line">    <span class="keyword">var</span> name = req.body.name;</div><div class="line">    <span class="keyword">var</span> pass = req.body.pass;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//数据库查询方法查询是否匹配到用户名和密码</span></div><div class="line"><span class="comment">//res.json()可以返回一个json对象</span></div><div class="line">    database.findOne(&#123; <span class="string">"name"</span>: name &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">error, results</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (error) &#123;</div><div class="line">            <span class="built_in">console</span>(<span class="string">'查询出错'</span>)</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!results) &#123;</div><div class="line">            res.json(&#123;</div><div class="line">                <span class="string">'err'</span>: <span class="string">"wrongname"</span>,</div><div class="line">                <span class="string">'status'</span>: <span class="string">"err"</span>,</div><div class="line">                <span class="string">'body'</span>: req.body</div><div class="line">            &#125;)</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (pass != results.pass) &#123;</div><div class="line">            res.json(&#123;</div><div class="line">                <span class="string">'err'</span>: <span class="string">"wrongpass"</span>,</div><div class="line">                <span class="string">'status'</span>: <span class="string">"err"</span>,</div><div class="line">                <span class="string">'body'</span>: req.body</div><div class="line">            &#125;)</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"登录成功"</span>)</div><div class="line">            res.json(&#123;</div><div class="line">                <span class="string">'status'</span>: <span class="string">"ok"</span>,</div><div class="line">                <span class="string">'err'</span>: <span class="string">'no'</span>,</div><div class="line">                <span class="string">'body'</span>: req.body</div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = router;</div><div class="line"><span class="string">``</span><span class="string">` </span></div><div class="line"></div><div class="line">三 、'../model/database.js'数据库模型</div></pre></td></tr></table></figure>
 <p>var mongoose = require(‘mongoose’);<br>var Schema = mongoose.Schema;</p>
 <p>var mylogin = new Schema({<br>    name: { type: String, unique: true },<br>    pass: { type: Number, default: 789654 }<br>})</p>
 <p>var login = mongoose.model(‘hello’, mylogin)<br>module.exports = login<br>```  </p>
@@ -373,75 +373,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-9-05-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/05/9-05-js/">一道bilibili兴趣圈入群JavaScript题</a>
-    </h1>
-  
-
-        <a href="/2016/09/05/9-05-js/" class="archive-article-date">
-  	<time datetime="2016-09-05T07:51:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-05</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>　　代码如下：<br> <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="comment">//二、"use strict";</span></div><div class="line">	<span class="keyword">var</span>　 question = <span class="string">"wtf"</span>;</div><div class="line">	<span class="comment">//二、var objB;</span></div><div class="line">	(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">//立即调用模式</span></div><div class="line">		question = <span class="string">"wtf???"</span>; <span class="comment">//改变了全局变量question</span></div><div class="line">		<span class="keyword">var</span> objA = objB = &#123; <span class="comment">//objB 未声明，因此会隐性声明一个全局变量objB,然后赋值给objA;</span></div><div class="line">			question: <span class="string">"wtf"</span>,</div><div class="line">			<span class="attr">then</span>: &#123;</div><div class="line">				<span class="attr">question</span>: <span class="string">"with this question???"</span>,</div><div class="line">				<span class="attr">print</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">					<span class="keyword">var</span> question = <span class="string">"i love js "</span>;</div><div class="line">					<span class="built_in">console</span>.log(<span class="keyword">this</span>.question);<span class="comment">//二、this 严格模式不能指向全局对象，window.question</span></div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line"></div><div class="line">		<span class="keyword">var</span> print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">var</span> question = <span class="string">"i love js me tooo"</span>;</div><div class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span>.question)</div><div class="line">		&#125;;</div><div class="line"></div><div class="line">	&#125;)();</div><div class="line">	<span class="keyword">var</span> then = objB.then.print; <span class="comment">//print中的this指向作用域中的question,objB为全局变量 ，所以输出为wtf???</span></div><div class="line">	then();</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p> <strong>1,写出输出值；</strong><br> 我的答案：<br> 立即调用函数改变了全局变量question为wtf？？？；</p>
-<p>objB 未声明，因此会隐性声明一个全局变量objB,然后赋值给objA;</p>
-<p>objB.then.print中的this指向作用域中的question,objB为全局变量 ，所以输出为wtf??? </p>
-<p> <strong>2，严格模式如何修改；</strong><br> 严格模式中，必须先声明变量，this不能指向全局对象，所以声明全局变量，并且更改this.question为window.question：</p>
-<p> …………………………………………………………………………………………………………………………………..<br><strong>3，个人收获</strong><br>之前一直不懂两个等号的意思，通过这个题目，稍微了解了下，一次是赋值，一次是引用。个人理解~<br> var objA = objB ={}；<br> objB隐性声明为全局变量并且赋值，而objA则是对objB的一次引用；<br> 以及函数作用域的问题，JavaScript高级程序设计的确是一本好书，哈哈哈。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color1">JavaScript</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">bilibili</a>
-        </li>
-      
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/05/9-05-js/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-20161010-VueStart" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -504,6 +435,75 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/09/05/20161010-VueStart/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-9-05-js" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/05/9-05-js/">一道bilibili兴趣圈入群JavaScript题</a>
+    </h1>
+  
+
+        <a href="/2016/09/05/9-05-js/" class="archive-article-date">
+  	<time datetime="2016-09-05T07:51:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-05</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>　　代码如下：<br> <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="comment">//二、"use strict";</span></div><div class="line">	<span class="keyword">var</span>　 question = <span class="string">"wtf"</span>;</div><div class="line">	<span class="comment">//二、var objB;</span></div><div class="line">	(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">//立即调用模式</span></div><div class="line">		question = <span class="string">"wtf???"</span>; <span class="comment">//改变了全局变量question</span></div><div class="line">		<span class="keyword">var</span> objA = objB = &#123; <span class="comment">//objB 未声明，因此会隐性声明一个全局变量objB,然后赋值给objA;</span></div><div class="line">			question: <span class="string">"wtf"</span>,</div><div class="line">			<span class="attr">then</span>: &#123;</div><div class="line">				<span class="attr">question</span>: <span class="string">"with this question???"</span>,</div><div class="line">				<span class="attr">print</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">					<span class="keyword">var</span> question = <span class="string">"i love js "</span>;</div><div class="line">					<span class="built_in">console</span>.log(<span class="keyword">this</span>.question);<span class="comment">//二、this 严格模式不能指向全局对象，window.question</span></div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line"></div><div class="line">		<span class="keyword">var</span> print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">var</span> question = <span class="string">"i love js me tooo"</span>;</div><div class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span>.question)</div><div class="line">		&#125;;</div><div class="line"></div><div class="line">	&#125;)();</div><div class="line">	<span class="keyword">var</span> then = objB.then.print; <span class="comment">//print中的this指向作用域中的question,objB为全局变量 ，所以输出为wtf???</span></div><div class="line">	then();</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p> <strong>1,写出输出值；</strong><br> 我的答案：<br> 立即调用函数改变了全局变量question为wtf？？？；</p>
+<p>objB 未声明，因此会隐性声明一个全局变量objB,然后赋值给objA;</p>
+<p>objB.then.print中的this指向作用域中的question,objB为全局变量 ，所以输出为wtf??? </p>
+<p> <strong>2，严格模式如何修改；</strong><br> 严格模式中，必须先声明变量，this不能指向全局对象，所以声明全局变量，并且更改this.question为window.question：</p>
+<p> …………………………………………………………………………………………………………………………………..<br><strong>3，个人收获</strong><br>之前一直不懂两个等号的意思，通过这个题目，稍微了解了下，一次是赋值，一次是引用。个人理解~<br> var objA = objB ={}；<br> objB隐性声明为全局变量并且赋值，而objA则是对objB的一次引用；<br> 以及函数作用域的问题，JavaScript高级程序设计的确是一本好书，哈哈哈。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">JavaScript</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color4">bilibili</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/09/05/9-05-js/">展开全文 >></a>
         </p>
       
 
@@ -908,22 +908,6 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">job</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">career change</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">IT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">new</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">JavaScript</a>
               </li>
              
@@ -940,22 +924,6 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color4">bilibili</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">html5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">notification</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">chrome&&firefox</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">BE</a>
               </li>
              
@@ -968,7 +936,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">for me afer ten years</a>
+                <a href="javascript:void(0)" class="color1">html5</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">notification</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">chrome&&firefox</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -988,7 +964,47 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">job</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">future</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">bilibili</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">for me afer ten years</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">past</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">memory</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">javasciprt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">code</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">Greasemonkey</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">japan</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">film</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1008,34 +1024,6 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">past</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">memory</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">japan</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">film</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color1">javasciprt</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">code</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color3">Greasemonkey</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color4">web</a>
               </li>
              
@@ -1049,6 +1037,18 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color1">books</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">career change</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">IT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color4">new</a>
               </li>
             
             <div class="clearfix"></div>
